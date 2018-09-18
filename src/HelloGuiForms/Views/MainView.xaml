@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloGuiForms.Views.MainView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Yellow" />
+            </Style>
+
+            <Style x:Key="FieldStyle" TargetType="Label">
+                <Setter Property="Margin" Value="10, 0, 0, 0" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid 
+                Padding="10, 10, 10, 10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+                <Label 
+                    Text="Search by Zip Code" 
+                    Grid.Row="0" 
+                    Grid.Column="0" 
+                    Grid.ColumnSpan="3"
+                    TextColor="White"
+                    Margin="0, 6"/>
+                <Label 
+                    Text="Zip Code:" 
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Style="{StaticResource LabelStyle}"
+                    TextColor="#C0C0C0" />
+                <Entry
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="{Binding ZipCode, Mode=TwoWay}"
+                    Margin="5, 0" />
+                <Button 
+                    Text="Get Weather" 
+                    Grid.Row="1" 
+                    Grid.Column="2"
+                    Command="{Binding WeatherCommand}"/>
+            </Grid>
+            <StackLayout
+                Padding="10, 10, 10, 10">
+                <Label 
+                    Text="Location" 
+                    Style="{StaticResource LabelStyle}" />
+                <Label 
+                    Text="{Binding Weather.Title}"
+                    Style="{StaticResource FieldStyle}" />
+                <Label 
+                    Text="Temperature"
+                    Style="{StaticResource LabelStyle}" />
+                <Label 
+                    Text="{Binding Weather.Temperature}" 
+                    Style="{StaticResource FieldStyle}" />
+                <Label
+                    Text="Wind Speed"
+                    Style="{StaticResource LabelStyle}" />
+                <Label 
+                    Text="{Binding Weather.Wind}"
+                    Style="{StaticResource FieldStyle}" />
+                <Label 
+                    Text="Humidity" 
+                    Style="{StaticResource LabelStyle}" />
+                <Label
+                    Text="{Binding Weather.Humidity}"
+                    Style="{StaticResource FieldStyle}" />
+                <Label 
+                    Text="Visibility" 
+                    Style="{StaticResource LabelStyle}" />
+                <Label 
+                    Text="{Binding Weather.Visibility}"
+                    Style="{StaticResource FieldStyle}" />
+                <Label 
+                    Text="Time of Sunrise" 
+                    Style="{StaticResource LabelStyle}" />
+                <Label
+                    Text="{Binding Weather.Sunrise}"
+                    Style="{StaticResource FieldStyle}" />
+                <Label
+                    Text="Time of Sunset" 
+                    Style="{StaticResource LabelStyle}" />
+                <Label 
+                    Text="{Binding Weather.Sunset}"
+                    Style="{StaticResource FieldStyle}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
