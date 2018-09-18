@@ -2,7 +2,7 @@
 
 **Weather** is a Xamarin.Forms **gui.cs backend** application that makes use [OpenWeatherMap.org API](https://openweathermap.org/api), to demonstrate the possibilities of the new backend.
 
-<img src="images/forms-gui-weatherapp.png" alt="WeatherApp" Width="800" />
+<img src="images/forms-gui-weatherapp.gif" alt="WeatherApp" Width="800" />
 
 ## Xamarin.Forms App 
 
